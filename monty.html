@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Half Monty</title>
+    <link rel=stylesheet href=monty.css/>
+</head>
+
+<body>
+    <h1>Monty Hall Simulation</h1>
+<button onclick='monty();'>Run Once!</button><br/>
+<button onclick='montyLoop();'>Run a Thousand Times!</button><br/>
+<button onclick='swap();' id='swapBut'>Change to 'Switch' mode!</button><br/>
+<div id='score'>Game score<hr/></div>
+<button onclick='info();' id='infoBut'>...What?</button><br/>
+<div id='infoDiv'>
+    <h2>The Problem</h2>
+This is a simulation of the famous Monty Hall Problem. Here's the deal:
+<ol>
+    <li>You're playing a game show where you can potentially win a brand new car.</li>
+    <li>The host offers you three doors: Door 1, Door 2, and Door 3.</li>
+    <li>You pick one door, but don't open it yet.</li>
+    <li>Your host then opens one of the <i>losing</i> doors (these doors commonly hold something that most normal people don't really want, like a goat).</li>
+    <li>You are then given the option to stay on your current door or switch to the remaining other closed door.</li>
+</ol>
+So what's the bettter option? Should you stay? Should you switch? Does it <i>matter</i>?
+<hr/>
+<h2>The Simulation</h2>
+This simulation runs the Monty Hall problem either once ('Run Once!') or a thousand times ('Run a Thousand Times!'). You can change between 'Switch' mode, where the simulated player switches after the host reveals a losing door, and 'Stay' mode, where the simulated player holds his/her ground. Here's a small breakdown of how it works:
+<ol>
+    <u>Simulation Procedure</u>
+    <li>The simulation randomly selects 1, 2 or 3 as the 'winning door'.</li>
+    <li>The simulation randomly picks a door for the simulated user to 'pick'. This again is 1, 2 or 3, and is independent of the 'winning door' pick</li>
+    <li>Finally, the simulation finds a door that is neither the correct door nor the door selected by the simulated user. This represents the door opened by the host</li>
+    <li>An array is then built that holds the remaining, closed doors (i.e., minus the host door).</li>
+    <li>If the user has selected switch mode the simulated user switches doors. Otherwise, the simulated user stays.</li>
+    <li>Finally, the simulation compares the simulated user's final guess with correct door. Results are stored in an array</li>
+</ol>
+</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
+<script src='Monty.js'></script>
+</body>
+</html>
